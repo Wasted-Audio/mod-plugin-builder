@@ -68,6 +68,11 @@ if [ ! -f .stamp_built1 ]; then
   touch .stamp_built1
 fi
 
+if [ "${PLATFORM}" == "modduox" ]; then
+  # keep old name for backwards compatibility
+  sed -i "s/CT_TARGET_SYS=gnu;/CT_TARGET_SYS=gnueabi;/" scripts/functions
+fi
+
 if [ ! -f .stamp_built2 ]; then
   ./ct-ng build
   touch .stamp_built2
