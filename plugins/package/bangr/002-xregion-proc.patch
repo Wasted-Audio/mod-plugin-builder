@@ -1,7 +1,16 @@
 diff --git a/src/Airwindows/XRegion.cpp b/src/Airwindows/XRegion.cpp
-index a98bde9..a841103 100644
+index a98bde9..51f2036 100644
 --- a/src/Airwindows/XRegion.cpp
 +++ b/src/Airwindows/XRegion.cpp
+@@ -30,7 +30,7 @@
+ #include "XRegion.hpp"
+ #include <cstring>
+ 
+-XRegion::XRegion (const double rate) :
++XRegion::XRegion (const float rate) :
+     rate (rate),
+     params {0.5, 0.5, 0.5, 0.0, 1.0, 0.0}
+ {
 @@ -43,83 +43,83 @@ XRegion::~XRegion() {}
  
  void XRegion::process (float* input1, float* input2, float* output1, float* output2, int32_t sampleFrames)
@@ -258,3 +267,47 @@ index a98bde9..a841103 100644
  {
      memcpy (params, values, 6 * sizeof (float));
  }
+diff --git a/src/Airwindows/XRegion.hpp b/src/Airwindows/XRegion.hpp
+index 2961e9d..00439e4 100644
+--- a/src/Airwindows/XRegion.hpp
++++ b/src/Airwindows/XRegion.hpp
+@@ -1,6 +1,6 @@
+ /* ========================================
+  *  XRegion - XRegion.h
+- *  Created 8/12/11 by SPIAdmin 
++ *  Created 8/12/11 by SPIAdmin
+  *  Copyright (c) 2011 __MyCompanyName__, All rights reserved
+  * ======================================== */
+ 
+@@ -38,7 +38,7 @@
+ class XRegion
+ {
+ public:
+-    XRegion (const double rate);
++    XRegion (const float rate);
+     XRegion (const XRegion& that) = delete;
+     ~XRegion();
+     XRegion& operator= (const XRegion& that) = delete;
+@@ -48,14 +48,14 @@ public:
+     void setParameters (const float* values);
+ 
+ private:
+-    double rate;
+-    long double biquad[15];
+-	long double biquadA[15];
+-	long double biquadB[15];
+-	long double biquadC[15];
+-	long double biquadD[15];
+-	uint32_t fpdL;
+-	uint32_t fpdR;
++    float rate;
++    float biquad[15];
++    float biquadA[15];
++    float biquadB[15];
++    float biquadC[15];
++    float biquadD[15];
++    uint32_t fpdL;
++    uint32_t fpdR;
+     float params[6];
+ };
+ 
