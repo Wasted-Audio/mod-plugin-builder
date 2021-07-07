@@ -4,7 +4,7 @@
 #
 ######################################
 
-BANGR_VERSION = ec25efa0a7a090a8f31dccafa02fe6ffc437aeba
+BANGR_VERSION = a28c6061cfcabad546bc5184e52fa1309c9390a9
 BANGR_SITE = $(call github,sjaehn,BAngr,$(BANGR_VERSION))
 BANGR_BUNDLES =  BAngr.lv2
 
