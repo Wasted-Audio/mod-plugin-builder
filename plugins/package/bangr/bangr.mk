@@ -4,8 +4,9 @@
 #
 ######################################
 
-BANGR_VERSION = ec25efa0a7a090a8f31dccafa02fe6ffc437aeba
+BANGR_VERSION = dfd53a32475a7c0cb5d4ed2ba612cecd10e705fd
 BANGR_SITE = $(call github,sjaehn,BAngr,$(BANGR_VERSION))
+BANGR_DEPENDENCIES = cairo
 BANGR_BUNDLES =  BAngr.lv2
 
 CAPS_TARGET_MAKE = $(TARGET_MAKE_ENV) $(TARGET_CONFIGURE_OPTS) $(MAKE) -C $(@D)
