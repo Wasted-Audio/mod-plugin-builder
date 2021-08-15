@@ -1,0 +1,14 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 878012b..4a5b053 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -18,6 +18,9 @@ if(UNIX AND NOT APPLE)
+     list(APPEND JUCE_FORMATS LV2)
+ endif()
+ 
++# MOD build
++set(JUCE_FORMATS JUCE_FORMATS LV2)
++
+ juce_add_plugin(NeuralPi
+     COMPANY_NAME GuitarML
+     PLUGIN_MANUFACTURER_CODE GtML
